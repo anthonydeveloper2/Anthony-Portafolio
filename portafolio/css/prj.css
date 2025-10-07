@@ -1,0 +1,78 @@
+/* Estilos específicos para a página de Projetos */
+
+/* Importa variáveis de cores globais e keyframes */
+@import url('style.css');
+
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+}
+
+section {
+    padding: 4rem 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que a seção ocupe a altura total da tela */
+    background-color: var(--primary-bg-color); /* Fundo para a seção Projetos */
+}
+
+.projects h2 {
+    animation: fadeInDown 1s ease-out forwards;
+    opacity: 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.project-item {
+    background-color: var(--secondary-bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    opacity: 0; /* Para animação de entrada */
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Atrasos para animação de entrada dos itens de projeto */
+.project-item:nth-child(1) { animation-delay: 0.3s; }
+.project-item:nth-child(2) { animation-delay: 0.6s; }
+.project-item:nth-child(3) { animation-delay: 0.9s; }
+.project-item:nth-child(4) { animation-delay: 1.2s; }
+/* Adicione mais nth-child conforme o número de projetos */
+
+
+.project-item:hover {
+    transform: translateY(-10px) scale(1.03); /* Mais pronunciado */
+    box-shadow: 0 12px 24px rgba(0, 123, 255, 0.4); /* Sombra mais forte e azulada */
+    background-color: #222; /* Levemente mais claro no hover */
+}
+
+.project-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.project-item p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
