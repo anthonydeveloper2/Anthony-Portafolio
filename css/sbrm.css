@@ -1,0 +1,122 @@
+/* Importa variáveis de cores globais e keyframes */
+@import url('style.css');
+
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+}
+
+section {
+    padding: 4rem 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que a seção ocupe a altura total da tela */
+    background-color: var(--secondary-bg-color); /* Fundo para a seção Sobre Mim */
+}
+
+.about h2 {
+    animation: fadeInDown 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.1s; /* Ajustado */
+}
+
+.about p { /* Alterado para um único parágrafo */
+    text-align: left;
+    margin: 0 auto 1.5rem auto;
+    animation: fadeInLeft 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.4s; /* Ajustado */
+}
+
+.technologies-section {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.technologies-section h3 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    animation: fadeInDown 1s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.9s; /* Delay após o parágrafo */
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tech-item {
+    background-color: var(--secondary-bg-color);
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Para animação */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.tech-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4);
+    background-color: #222;
+}
+
+/* Estilos para os ícones de tecnologia (imagens) */
+.tech-item img.tech-icon {
+    width: 70px; /* Tamanho aumentado para melhor visibilidade */
+    height: 70px;
+    object-fit: contain; /* Garante que a imagem seja dimensionada corretamente dentro de seus limites */
+    margin-bottom: 1rem;
+    /* Propriedades como background-color, color, font-size, font-weight, border-radius, display, align-items, justify-content foram removidas */
+    /* A sombra da caixa é tratada pelo contêiner .tech-item */
+}
+
+.tech-item h4 {
+    color: var(--heading-color);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Animation delays para itens de tecnologia */
+.tech-item:nth-child(1) { animation-delay: 1.2s; }
+.tech-item:nth-child(2) { animation-delay: 1.3s; }
+.tech-item:nth-child(3) { animation-delay: 1.4s; }
+.tech-item:nth-child(4) { animation-delay: 1.5s; }
+.tech-item:nth-child(5) { animation-delay: 1.6s; }
+.tech-item:nth-child(6) { animation-delay: 1.7s; }
+.tech-item:nth-child(7) { animation-delay: 1.8s; }
+
+/* Ajustes responsivos para tecnologias */
+@media (max-width: 480px) {
+    .technologies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .tech-item img.tech-icon { /* Atualize isso para imagens */
+        width: 50px;
+        height: 50px;
+    }
+    .tech-item h4 {
+        font-size: 1rem;
+    }
+        
+    .tech-item h4 {
+        font-size: 1rem;
+    }
+
+  }
